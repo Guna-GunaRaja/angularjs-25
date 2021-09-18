@@ -1,0 +1,9 @@
+body{
+    display: grid;
+    list-style: none;
+    place-items: center;
+    height: 100vh;
+}
+.bold{
+    font-weight: 600;
+}

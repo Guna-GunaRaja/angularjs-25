@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://unsplash.it/30/30" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Angular - Factory</title>
+</head>
+<body ng-app="Factory-Training">
+<div class="container">
+    <!-- ``````````````````````````````````````````````````` ng controller `````````````````````````````````````````````````````````````````` -->
+        <div ng-controller="MainController">
+            <div ng-repeat="item in list">
+                <li>{{ item }}</li>
+            </div>
+        </div>
+    <!-- ```````````````````````````````````````````````````` Random factory ```````````````````````````````````````````````````````````````` -->
+        <div ng-controller="randomController">
+            <button ng-click="generateRandomNumber()">click</button>
+            <p>{{ generateNumber }}</p>
+        </div>
+    
+    <!-- ````````````````````````````````````````````````` epoch time converter ````````````````````````````````````````````````````````````` -->
+    
+        <div>
+            <label for="epochTime">Enter Epoch Time</label><br>
+            <input type="number" id="epochTime" ng-model="epochTime" >
+            <p>{{ epochTime*1000 | date: 'yyyy-MMMM-dd EEEE HH:mm:ss Z' }}</p>
+        </div>
+    
+    <!-- ````````````````````````````````````````````````````` Directives ``````````````````````````````````````````````````````````````````` -->
+    
+        <div>
+            <label for="boldText">Enter text below to convert it to Bold</label><br>
+            <input type="text" id="boldText" ng-model="boldText">
+            <p ng-bind="boldText" class="bold" ></p>
+        </div>
+</div>
+
+    <script src="js/index.js"></script>
+    <script src="js/controller/controller.js"></script>
+</body>
+</html>
